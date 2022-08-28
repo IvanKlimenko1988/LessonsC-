@@ -1,4 +1,6 @@
-﻿// Перввая группа методов - ничего не принимают и ничего не возвращают
+﻿using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
+// Перввая группа методов - ничего не принимают и ничего не возвращают
 
 // void Method1()
 // {
@@ -124,7 +126,18 @@ void PrintArray(int[]array) //метод для печати массива
 
 void SelectionSort(int[]array)
 {
-    
+    for( int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+            for(int j = i + 1; j < array.Length; j++)
+            {
+                if(array[j] < array[minPosition]) minPosition = j;
+            }
+        int temp = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temp;
+    }
 }
-
+PrintArray(arr);
+SelectionSort(arr);
 PrintArray(arr);
