@@ -126,17 +126,17 @@ void PrintArray(int[]array) //метод для печати массива
 
 void SelectionSort(int[]array)
 {
-    for( int i = 0; i < array.Length - 1; i++)
-    {
+    for( int i = 0; i < array.Length - 1; i++)   //Во внешнем цикле мы перебираем все элементы, 
+        {                                        //если элемент меньше следующего, то меняем местами
         int minPosition = i;
-            for(int j = i + 1; j < array.Length; j++)
+            for(int j = i + 1; j < array.Length; j++)   //Во внутреннем цикле проверяем два сосдених элемента, какой больше
             {
                 if(array[j] < array[minPosition]) minPosition = j;
             }
-        int temp = array[i];
+        int temp = array[i];                    //Временная переменная, для замены элементов местами
         array[i] = array[minPosition];
         array[minPosition] = temp;
-    }
+        }
 }
 PrintArray(arr);
 SelectionSort(arr);
